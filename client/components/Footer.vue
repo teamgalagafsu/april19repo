@@ -1,0 +1,70 @@
+<template>
+    <main>
+        <header>
+
+                <div>
+  				    <p>Peppermint Math Tutor Grades K-4 by Galaga</p>
+  				    <p>Framingham State University | Software Engineering Spring 2021</p>
+  				    <p><a href="p-comingsoon">Privacy Policy</a> | <a href="p-comingsoon">Terms and Conditions of Use </a></p>
+                    <template v-if="$auth.$state.loggedIn">
+                        <span @click="onLogout" id='logout'>Logout</span>
+                    </template>
+  			    </div>
+
+            <div id='container'>
+
+                
+            </div>
+
+        </header>
+    </main>
+</template>
+<script>
+
+export default {
+
+  methods: {
+    async onLogout() {
+      await this.$auth.logout();
+    }
+  }
+}
+
+</script>
+<style scoped>
+
+body {
+    background-color: #C3ECDC;
+}
+
+#container {
+    display: flex;
+    /* flex-direction: column;
+    justify-content:space-between;
+    padding-top: 25px;
+    background: rgb(9,121,86);
+    background: linear-gradient(69deg, rgb(2, 142, 170) 50%, rgba(9,121,86,1) 100%);
+    border-bottom: 10px solid white;
+    color: white;
+    height: 90px; */
+    margin:auto;
+}
+
+#logout {
+    /* position: relative; */
+    /* bottom: 5px;
+    left: 80%; */
+    cursor: pointer;
+    /* font-size: 3em; */
+    color: white;
+    text-align: right;
+    z-index: 5;
+    border: 2px solid black;
+    padding: 5px 10px;
+    background-color: red;
+    margin-left: 80%;
+    font-size: 1.2em;
+    border-radius: 10px;
+}
+
+</style>
