@@ -4,58 +4,49 @@
             <div id="outerContainer">
                 <span id='number'>0</span>
                 <div id='topContainer'>
-                    
                     <nuxt-link to='/p-homek12'>
-                        <img id='logo' src="images/logo1.png" alt="">
+                        <img id='logo' src="/images/logo1.png" alt="">
                     </nuxt-link>
-                    
                     <div id="helloContainer">
                         <template v-if="$auth.$state.loggedIn">
-                            <div id='firstName' ><nuxt-link to='/profile'>{{ $auth.$state.user.firstName }}</nuxt-link></div>
+                            <div id='firstName'>
+                                <nuxt-link to='/profile'>{{ $auth.$state.user.firstName }}</nuxt-link>
+                            </div>
                         </template>
-
                         <template v-else>    
-                            <div id='login' class='unit1'><nuxt-link to="/p-login">Log In</nuxt-link></div>
-                            <div id='signup' class='unit2'><nuxt-link to="/p-create">Sign Up</nuxt-link></div>
+                            <div id='login' class='unit1'>
+                                <nuxt-link to="/p-login">Log In</nuxt-link>
+                            </div>
+                            <div id='signup' class='unit2'>
+                                <nuxt-link to="/p-create">Sign Up</nuxt-link>
+                            </div>
                         </template>
                     </div>
-
                     <div id="hamburger" @click="showOptions">
                         <span id="topBurgerLine" class='burgerLine'> . . . . . . </span>
                         <span id="middleBurgerLine" class='burgerLine'> . . . . . . </span>
                         <span id="bottomBurgerLine" class='burgerLine'> . . . . . . </span>
                     </div>
-                    
                 </div>
-
                 <div id="bottomContainer">
-
                     <div id='features' class='linker'>
                         <nuxt-link to='/p-comingsoon' style="white-space: pre;">Features</nuxt-link>
                     </div>
-                    
                     <div id='pricing' class='linker'>
                         <nuxt-link to='/p-comingsoon'>Pricing</nuxt-link>
                     </div>
-
                     <div id='reviews' class='linker'>
                         <nuxt-link to='/p-comingsoon'>Reviews</nuxt-link>
-                    </div>
-                    
+                    </div> 
                     <div id='about' class='linker'>
                         <nuxt-link to='/p-about'>About</nuxt-link>
                     </div>
-
-                    
-                    
-                    
-
                 </div>
-
             </div>
         </header>
     </main>
 </template>
+
 <script>
 export default {
     methods: {
@@ -69,13 +60,10 @@ export default {
             let middleBurgerLine = document.getElementById("middleBurgerLine");
             let bottomBurgerLine = document.getElementById("bottomBurgerLine");
             let logo = document.getElementById("logo");
-            
             let login = document.getElementById("login");
             let signup = document.getElementById("signup");
-
             let number = document.getElementById("number");
 
-            
             // first animation chunk - move forward
             let hamburgerKFFirstMove = "@keyframes hamburgerKFFirstMove                 { 0% {transform:   translateX(0) translateY(0)                ;} 50% {transform: translateX(-5px) translateY(-5px)                  ;} 100% {transform: translateX(-5px) translateY(-5px)                  ;} }";
             let topBurgerLineKFFirstMove = "@keyframes topBurgerLineKFFirstMove         { 0% {transform: translateX(0px) translateY(0px) rotateZ(0deg);} 50% {transform: translateX(0px)  translateY(0px)   rotateZ(-90deg) ;} 100% {transform: translateX(0px)  translateY(0px)   rotateZ(-90deg) ;} }";
@@ -85,15 +73,12 @@ export default {
             // second animation chunk -  move forward
             let logoKFFirstMove = "@keyframes logoKFFirstMove                           { 0% { transform: translateX(0px) translateY(19px) scale(1); } 20% { transform: translateX(0px) translateY(19px) scale(1); } 85% { transform: translateX(-20px) translateY(-13px) scale(0.7); } 100% { transform: translateX(-20px) translateY(-13px) scale(0.6); } }";
 
-
             // login and signup chunk - move forward
             let loginAndSignupKFFirstMove = "@keyframes loginAndSignupKFFirstMove       { 0% { transform: translateY(0); } 50% { transform: translateY(-19px); } 100% { transform: translateY(-19px) ;} }";
 
             // third animation chunk -  move forward
             let optionsKFFirstMove = "@keyframes optionsKFFirstMove                     { 0% { transform: translateY(30px); opacity: 0; } 30% { transform: translateY(30px); opacity: 0; } 60% {opacity: 0;} 95% { transform: translateY(0px); opacity: 1; } 100% { transform: translateY(0px); opacity: 1; } }";
-
-            
-            
+                            
             // third animation chunk - move back
             let optionsKFSecondMove = "@keyframes optionsKFSecondMove                   { 0% { transform: translateY(0px); opacity: 1; }   5% { transform: translateY(0px); opacity: 1; }  40% {opacity: 0;} 70% {transform: translateY(30px); opacity: 0;} 100% { transform: translateY(30px); opacity: 0; } }";
             
@@ -103,9 +88,7 @@ export default {
             // login and signup chunk - move forward
             let loginAndSignupKFSecondMove = "@keyframes loginAndSignupKFSecondMove     { 0% { transform: translateY(-20px); }                             50% { transform: translateY(0px); } 100% { transform: translateY(0px); } }";
 
-
             // first animation chunk - move back
-
             let hamburgerKFSecondMove = "@keyframes hamburgerKFSecondMove               {0% {transform: translateX(-5px) translateY(-5px) }                   20% {transform: translateX(-5px) translateY(-5px);}                   60%{transform:   translateX(0) translateY(0)                ;} }";
             let topBurgerLineKFSecondMove = "@keyframes topBurgerLineKFSecondMove       {0% {transform: translateX(0px)  translateY(0px)   rotateZ(-90deg) ;} 20% {transform: translateX(0px)  translateY(0px)   rotateZ(-90deg) ;} 60%{transform: translateX(0px) translateY(0px) rotateZ(0deg);} }";
             let middleBurgerLineKFSecondMove = "@keyframes middleBurgerLineKFSecondMove {0% {transform: translateX(15px) translateY(-17px) rotateZ(-90deg) ;} 20% {transform: translateX(15px) translateY(-17px) rotateZ(-90deg) ;} 60%{transform: translateX(0px) translateY(0px) rotateZ(0deg);} }";
@@ -125,7 +108,6 @@ export default {
                 document.styleSheets[0].insertRule(loginAndSignupKFFirstMove, 6);
 
                 // document.styleSheets[0].insertRule(firstNameKFFirstMove, 6);
-                
                 features.style.animation = "";
                 pricing.style.animation = "";
                 reviews.style.animation = "";
@@ -135,6 +117,7 @@ export default {
                 middleBurgerLine.style.animation = "";
                 bottomBurgerLine.style.animation = "";
                 logo.style.animation = "";
+
                 try {
                     signup.style.animation = "";
                     login.style.animation = "";    
@@ -145,9 +128,6 @@ export default {
                 // login.style.animation = "";
                 // firstName.style.animation = "";
 
-
-                
-
                 features.style.animation = "optionsKFFirstMove 375ms linear forwards";
                 pricing.style.animation = "optionsKFFirstMove 375ms linear forwards";
                 reviews.style.animation = "optionsKFFirstMove 375ms linear forwards";
@@ -157,6 +137,7 @@ export default {
                 middleBurgerLine.style.animation = "middleBurgerLineKFFirstMove 375ms linear forwards";
                 bottomBurgerLine.style.animation = "bottomBurgerLineKFFirstMove 375ms linear forwards";
                 logo.style.animation = "logoKFFirstMove 375ms linear forwards";
+
                 try {
                     signup.style.animation = "loginAndSignupKFFirstMove 375ms linear forwards";
                     login.style.animation = "loginAndSignupKFFirstMove 375ms linear forwards";
@@ -172,6 +153,7 @@ export default {
                 while (document.styleSheets[0].length > 0) {
                     document.styleSheets[0].removeRule(0);
                 }
+
                 document.styleSheets[0].insertRule(optionsKFSecondMove, 0);
                 // document.styleSheets[0].insertRule(pricingKFSecondMove, 1);
                 // document.styleSheets[0].insertRule(reviewsKFSecondMove, 2);
@@ -193,6 +175,7 @@ export default {
                 middleBurgerLine.style.animation = "";
                 bottomBurgerLine.style.animation = "";
                 logo.style.animation = "";
+
                 try {
                     signup.style.animation = "";
                     login.style.animation = "";    
@@ -200,7 +183,6 @@ export default {
                     console.log(err);
                 }
                 // firstName.style.animation = "";
-
 
                 features.style.animation = "optionsKFSecondMove 375ms linear forwards";
                 pricing.style.animation = "optionsKFSecondMove 375ms linear forwards";
@@ -211,6 +193,7 @@ export default {
                 middleBurgerLine.style.animation = "middleBurgerLineKFSecondMove 375ms linear forwards";
                 bottomBurgerLine.style.animation = "bottomBurgerLineKFSecondMove 375ms linear forwards";
                 logo.style.animation = "logoKFSecondMove 375ms linear forwards";
+
                 try {
                     signup.style.animation = "loginAndSignupKFSecondMove 375ms linear forwards";
                     login.style.animation = "loginAndSignupKFSecondMove 375ms linear forwards";
@@ -222,23 +205,20 @@ export default {
                 // firstName.style.animation = "firstNameKFSecondMove 375ms linear forwards";
                 number.innerHTML = 0;
             }
-            
-            console.log(number.innerHTML)
 
-            let outerContainer = document.getElementById('outerContainer');
-            let helloContainer = document.getElementById("helloContainer");
-
+            // console.log(number.innerHTML)
+            // let outerContainer = document.getElementById("outerContainer");
+            // let helloContainer = document.getElementById("helloContainer");
         }
     }
 }
 </script>
 
-
 <style scoped>
-
 body {
     background-color: #C3ECDC;
 }
+
 #number {
     position: absolute;
     top: 0;
@@ -274,7 +254,6 @@ body, h1, h2, h3, p {
     color: transparent;
     border-radius: 3px;
     /* color: white; */
-    
     /* border-radius: 10px; */
     /* padding: 2px 10px; */
 }
@@ -416,8 +395,4 @@ a {
     font-size: 1.3em;
     
 }
-
-
-
-
 </style>

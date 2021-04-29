@@ -1,40 +1,57 @@
 <template>
     <main>
         <header>
-
-                <div>
-  				    <p>Peppermint Math Tutor Grades K-4 by Galaga</p>
-  				    <p>Framingham State University | Software Engineering Spring 2021</p>
-  				    <p><a href="p-comingsoon">Privacy Policy</a> | <a href="p-comingsoon">Terms and Conditions of Use </a></p>
-                    <template v-if="$auth.$state.loggedIn">
-                        <span @click="onLogout" id='logout'>Logout</span>
-                    </template>
-  			    </div>
-
+            <div class="row4">
+                <p>Peppermint Math Tutor Grades K-4 by Galaga</p>
+                <p>Framingham State University | Software Engineering Spring 2021</p>
+                <p>
+                    <a href="p-privacy">Privacy Policy</a>
+                    <a>|</a>
+                    <a href="p-comingsoon">Terms and Conditions of Use</a>
+                </p>
+                <template v-if="$auth.$state.loggedIn">
+                    <span @click="onLogout" id='logout'>Logout</span>
+                </template>
+  			</div>
             <div id='container'>
-
-                
             </div>
-
         </header>
     </main>
 </template>
+
 <script>
-
 export default {
-
-  methods: {
-    async onLogout() {
-      await this.$auth.logout();
+    methods: {
+        async onLogout() {
+            await this.$auth.logout();
+        }
     }
-  }
 }
-
 </script>
-<style scoped>
 
+<style scoped>
 body {
     background-color: #C3ECDC;
+}
+
+.row4 {
+	float: left;
+	width: 100%;
+	padding: 10px 0% 20px 0%;
+	margin: 0px;
+	background-color: #2C8C67;
+}
+
+.row4>p, .row4>p>a{
+	color: white;
+	text-align: center;
+	font-size: 100%;
+	/* line-height: .5em; */
+	text-decoration: none;
+}
+
+.row4>p>a:hover{
+	color: #ECF9F3;
 }
 
 #container {
@@ -66,5 +83,4 @@ body {
     font-size: 1.2em;
     border-radius: 10px;
 }
-
 </style>
