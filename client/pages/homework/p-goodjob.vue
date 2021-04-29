@@ -1,45 +1,54 @@
 <template>
     <main>
-        <div id="homewrapper">
-  		<img class="candy" id="candy1" src="/images/candy1.png" />
-		<img class="candy" id="candy2" src="/images/candy2.png" />
-		<img class="candy" id="candy3" src="/images/candy3.png" />
-		<img class="candy" id="candy4" src="/images/candy1.png" />
-		<img class="candy" id="candy5" src="/images/candy2.png" />
-		<img class="candy" id="candy6" src="/images/candy3.png" />
-		<img class="candy" id="candy7" src="/images/candy1.png" />
-		<img class="candy" id="candy8" src="/images/candy2.png" />
-		<img class="candy" id="candy9" src="/images/candy3.png" />
-
-  		<img id="panda1" src="/images/homeworkpanda2.png" />
-  		<h1 id="usernamehere">Great job!</h1>
-  		<h2><a href="/p-homek12">Back to Home</a></h2>
-	</div>
-	<!-- Call Scripts -->   
-
-
+		<div id="homewrapper">
+			<div>
+				<img class="candy" id="candy1" src="/images/candy1.png" />
+				<img class="candy" id="candy2" src="/images/candy2.png" />
+				<img class="candy" id="candy3" src="/images/candy3.png" />
+				<img class="candy" id="candy4" src="/images/candy1.png" />
+				<img class="candy" id="candy5" src="/images/candy2.png" />
+				<img class="candy" id="candy6" src="/images/candy3.png" />
+				<img class="candy" id="candy7" src="/images/candy1.png" />
+				<img class="candy" id="candy8" src="/images/candy2.png" />
+				<img class="candy" id="candy9" src="/images/candy3.png" />
+				<img id="panda1" src="/images/homeworkpanda2.png" />
+				<br><br><br><br><br><br>
+			</div>
+			<h1 id="usernamehere">Username</h1>
+			<h2>
+				<a href="/p-homek12">Back to Home</a>
+			</h2>
+		</div>
     </main>
 </template>
 
 <script>
 export default {
-    mounted() {
-        
-/********************* Updating Username at top of Page ************/
-// Get student's first name and store in a variable
-var name = "Micky";
+	mounted() {
+		/********************* Updating Username at top of Page ************/
 
-// store the DOM node with id="username" in a variable
-var updateUsername = document.getElementById('usernamehere'); 
+		// // Get student's first name and store in a variable
+		// var name = "Name Here";
 
-// update the inner HTML of this node to the name from the student object
-updateUsername.innerHTML = "Great job " + name + "!";
+		// store the DOM node with id="username" in a variable
+		var updateUsername = document.getElementById('usernamehere'); 
 
-    }
+		// // update the inner HTML of this node to the name from the student object
+		// updateUsername.innerHTML = name;
+
+		// update the inner HTML of this node to the name from the student object
+		if (!this.$auth.$state.loggedIn) {
+			this.$router.push("/p-create");
+			return
+		}
+		else {
+			updateUsername.innerHTML = "Great job " + this.$auth.user.email + "!";
+		}
+	}
 }
 </script>
 
-<style>
+<style scoped>
 /* Colors
 light green: #ECF9F3
 medium green: #C3ECDC;
@@ -64,7 +73,16 @@ body{
 	animation-name: grow;
 	animation-duration: 2s;
 }
-h1 {
+h1, h2 {
+  width: 100%;
+  float: left;
+  text-align: center;
+  color: #2C8C67;
+  margin: 2px 0% 0px 0%;
+  text-decoration: none;
+}
+
+/* h1 {
 	width: 100%;
 	float: left;
 	text-align: center;
@@ -79,7 +97,7 @@ a {
 	text-align: center;
 	width: 100%;
 	margin: 0px;
-}
+} */
 
 @keyframes grow {
 	0% {transform: scale(0);}

@@ -18,9 +18,8 @@ export default {
 }
 </script>
 
-
-<style>
-  body {
-    
-  }
+<style scoped>
+body {
+  
+}
 </style>

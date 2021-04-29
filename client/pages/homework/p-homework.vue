@@ -1,97 +1,86 @@
 <template>
     <main>
-<div id="homewrapper">
-  		<div id="homerow1">
-			<a href="/p-homek12">
-				<img id="homelink" src="/images/homelink.png" />
-			</a>
-  			<h2>Kay</h2>
-  			<img id="candybowl" src="/images/tencandy.png" />
-  			<a href="/p-comingsoon"><img id="accounticon" src="/images/accounticon.png" /></a>
-  		</div>
-  		<div id="homerow2">
-			<br/><br/>
-			<table width="100%">
-				<tbody>
-				<tr>
-					<td align="center" width="25%" style="border: none;">
-						<a href="p-algebthinking">
-							<img id="algebthinking" height="200px" width="200px" src="/images/algebthinking.png" />
-							<h3>Operations and Algebraic Thinking</h3>
-						</a>
-						<br/><br/><img class="progress" src="/images/progressbar.png" />
-						<br/><br/><h4>0 of 10 Complete</h4>
-					</td>
-					<td align="center" width="25%" style="border: none;">
-						<a href="p-2nbt">
-							<img id="numoperbaseten" height="200px" width="200px" align="center" src="/images/numandoperbaseten.png" />
-							<h3>Number and Operations - Base Ten</h3>
-						</a>
-						<br/><br/><img class="progress" src="/images/progressbar.png" />
-						<br/><br/><h4>5 of 15 Complete</h4>
-					</td>
-					<td align="center" width="25%" style="border: none;">
-						<a href="/p-comingsoon">
-							<img id="measuredata" height="200px" width="200px" src="/images/measuredata.png" />
-							<h3>Measurement and Data</h3>
-						</a>
-						<br/><br/><img class="progress" src="/images/progressbar.png" />
-						<br/><br/><h4>7 of 10 Complete</h4>
-					</td>
-					<td align="center" width="25%" style="border: none;">
-						<a href="/p-comingsoon">
-							<img id="geometry" height="200px" width="200px" src="/images/geometry.png" />
-							<h3>Geometry</h3>
-						</a>
-						<br/><br/><img class="progress" src="/images/progressbar.png" />
-						<br/><br/><h4>2 of 20 Complete</h4>
-					</td>
-				</tr>
-				</tbody>
-			</table>
-			<div align="right">
-				<img id="hellokay" height="200px" width="200px" src="/images/hellokay.png" />
+		<div id="homewrapper">
+			<div id="homerow1">
+				<h2 id="usernamehere">Username</h2>
+				<img id="candybowl" src="/images/tencandy.png" />
+				<a href="/profile">
+					<img id="accounticon" src="/images/accounticon.png" />
+				</a>
 			</div>
-			<div class="row4">
-  				<p>Peppermint Math Tutor Grades K-4 by Galaga</p>
-  				<p>Framingham State University | Software Engineering Spring 2021</p>
-  				<p><a href="">Privacy Policy</a> | <a href="">Terms and Conditions of Use </a></p>
-  			</div>
+			<div id="homerow2">
+				<br/><br/>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="center" width="25%" style="border: none;">
+								<a href="p-hw1oa">
+									<img id="algebthinking" height="200px" width="200px" src="/images/algebthinking.png" />
+									<h3>Operations and Algebraic Thinking</h3>
+								</a>
+								<br/><br/>
+								<img class="progress" src="/images/progressbar.png" />
+								<br/><br/>
+								<h4>0 of 10 Complete</h4>
+							</td>
+							<td align="center" width="25%" style="border: none;">
+								<a href="p-hw2nbt">
+									<img id="numoperbaseten" height="200px" width="200px" align="center" src="/images/numandoperbaseten.png" />
+									<h3>Number and Operations - Base Ten</h3>
+								</a>
+								<br/><br/>
+								<img class="progress" src="/images/progressbar.png" />
+								<br/><br/>
+								<h4>5 of 15 Complete</h4>
+							</td>
+							<td align="center" width="25%" style="border: none;">
+								<a href="/p-comingsoon">
+									<img id="measuredata" height="200px" width="200px" src="/images/measuredata.png" />
+									<h3>Measurement and Data</h3>
+								</a>
+								<br/><br/>
+								<img class="progress" src="/images/progressbar.png" />
+								<br/><br/>
+								<h4>7 of 10 Complete</h4>
+							</td>
+							<td align="center" width="25%" style="border: none;">
+								<a href="/p-comingsoon">
+									<img id="geometry" height="200px" width="200px" src="/images/geometry.png" />
+									<h3>Geometry</h3>
+								</a>
+								<br/><br/>
+								<img class="progress" src="/images/progressbar.png" />
+								<br/><br/>
+								<h4>2 of 20 Complete</h4>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-	</div>
-
-
     </main>
 </template>
 
 <script>
 export default {
-    mounted() {
-        
-    }
+	mounted() {
+		/********************* Updating Username at top of Page ************/
+
+		// store the DOM node with id="username" in a variable
+		var updateUsername = document.getElementById('usernamehere'); 
+
+		// update the inner HTML of this node to the name from the student object
+		if (!this.$auth.$state.loggedIn) {
+			this.$router.push("/p-create");
+			return
+		} else {
+			updateUsername.innerHTML = this.$auth.user.email;
+		}
+	}
 }
 </script>
 
-<style>
-			
-
-
-				/* home pages */
-
-/* Colors
-light green: #ECF9F3
-medium green: #C3ECDC;
-dark green: #2C8C67;
-
-Tips:
-padding/margin list goes top, right, bottom, left
-
-Add a border to identify an element
-	border-width: 2px 2px 2px 2px;
-	border-style: solid;
-	border-color: purple;
-*/
-
+<style scoped>
 body{
 	background-color: #C3ECDC;
 	font-family: Arial, Verdana, sans-serif;
@@ -105,7 +94,6 @@ a{
 td {
 	border-radius: 25px;
 	padding: 50px;
-	/*border: 3px solid #2C8C67;*/
 }
 
 /********************* home page kids ***************/
@@ -115,7 +103,6 @@ td {
 	padding: 0px;
 	margin: 0px;
 }
-
 
 #homelink {
 	float: left;
@@ -156,6 +143,7 @@ h2 {
 	width: 60%;
 	padding: 0px;
 }
+
 #stories:hover {
 	width: 61%;}
 
@@ -168,12 +156,6 @@ h2 {
 #hw1:hover {
 	width: 49%;
 }
-
-/*
-#hw1:hover{
-	width: 22%;
-	margin: 95px 0% 0px 2.5%;
-}*/
 
 #games {
 	float: left;
@@ -226,15 +208,18 @@ h4{
 	float: left;
 	width: 100%;
 }
+
 #row3col1{
 	float: left;
 	padding: 0px;
 
 }
+
 #row3col2{
 	float: left;
 	padding: 0px;
-	}
+}
+
 p{
 	float: left;
 	width: 100%;
@@ -266,10 +251,11 @@ p{
 .row4>p, .row4>p>a{
 	color: white;
 	text-align: center;
-	font-size: 80%;
+	font-size: 100%;
 	line-height: .5em;
 	text-decoration: none;
 }
+
 .row4>p>a:hover{
 	color: #ECF9F3;
 }
@@ -303,14 +289,11 @@ p{
 	#row3{	margin: 100px 0% 0px 0%;}
 	#row3col1{ width: 25%; margin: 0px 0% 0px 25%;}
 	#row3col2{ width: 25%; 	margin: 0px 25% 0px 0%;}
-	.row4>p{font-size: 70%;}
-	
+	.row4>p{font-size: 100%;}
 }
 
 /* Style for medium iPad-size screen */
-
 @media (max-width: 1000px) {
-
 	#homelink {width: 10%;}
 	#candybowl {width: 13%;}
 	h2 {width: 30%; margin: 15px 0% 0px 18%; }
@@ -351,9 +334,4 @@ p{
 	#row3col2{ width: 50%; 	margin: 0px 0% 0px 0%;}
 	.row4>p{font-size: 70%;}
 }
-
-	
-	/***************** 3-4 ***************/
-
-
 </style>

@@ -1,11 +1,16 @@
 <template>
     <main>
-    <div>
-  		<img id="threepandas" src="images/threepandas.png" />
-  		<a href="p-login" id="return">Return to Login</a>
-  	</div>
-
-
+		<div>
+			<h2><br><br>Welcome to Peppermint!
+				<br><br>
+				Peppermint is a math tutor software for elementary-aged children and their administrators that helps students study math and practice their math skills.
+				<br>
+				This software serves children in grades K through grade 4 in the area of “Number Sense and Operations” in accordance with the <a target="_blank" href="https://www.doe.mass.edu/frameworks/math/2017-06.pdf">Massachusetts Department of Elementary and Secondary Education</a>.
+				<br>
+				Peppermint was designed and built by a group of software engineers with your children and their futures in mind, come learn with us!
+			</h2>
+			<img id="threepandas" src="images/threepandas.png" />
+		</div>
     </main>
 </template>
 
@@ -15,39 +20,22 @@ export default {
 }
 </script>
 
-<style>
-			
-
-				/* loginpage */
-
-/* Colors
-light green: #ECF9F3
-medium green: #C3ECDC;
-dark green: #2C8C67;
-
-Tips:
-padding/margin list goes top, right, bottom, left
-
-Add a border to identify an element
-	border-width: 2px 2px 2px 2px;
-	border-style: solid;
-	border-color: purple;
-*/
-
+<style scoped>
 body{
-	background-color: #ECF9F3;
+	background-color: #C3ECDC;
 	font-family: Arial, Verdana, sans-serif;
 }
 
 a{
 	color: #2C8C67;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 h2 {
 	color: #2C8C67;
+	width: 100%;
 	border-radius: 5px;
-	padding: 5px 0% 5px 0%;
+	padding: 5px 30% 5px 30%;
 	text-align: center;
 }
 
@@ -58,7 +46,7 @@ h2 {
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
-	background-color: #ECF9F3;
+	background-color: #C3ECDC;
 }
 
 .row1>h2 {
@@ -68,24 +56,20 @@ h2 {
 	float: left;
 	margin: 20px 0% 1px 15%;
 	padding: 0px;
-	background-color: #ECF9F3;
+	background-color: #C3ECDC;
 	animation-duration: 1s;
 	animation-name: appear;
 }
+
 .row1>a{
 	float: right;
-
 	margin: 30px 3% 0px 0%;
-
 }
-
 
 .row1>a:hover{
 	font-size: 110%;
 	margin: 29px 2.8% 0px 0%;
 }
-
-
 
 /* Second row which includes Peppermint logo,
    panda, login box */
@@ -99,11 +83,10 @@ h2 {
 
 #logo {
 	float: left;
-	padding: 10px 0% 0px 15%;
+	padding: 10px 0% 0px 0%;
 	/*animation: 2s ease-in 0s mymove 1s;
 	animation-fill-mode: both;
 	animation: mymove 5s infinite; */
-	
 	animation-duration: 2s;
 	animation-name: bounceIn;
 }
@@ -152,8 +135,8 @@ font-size: 120%;
 		width: 68%;
 	}
 	.row3>p {font-size: 80%;}
-
 }
+
 /* Style for medium iPad-size screen */
 @media (max-width: 1000px) {
 	.row1>h2 {font-size: 200%;}
@@ -198,6 +181,7 @@ font-size: 120%;
 	}
 	.row3>p {font-size: 50%;}
 }
+
 /* Login, Register, Forgot Password */
 #col1{
 	float: left;
@@ -207,8 +191,8 @@ font-size: 120%;
 	border-style: solid;
 	border-color: #2C8C67;
 	margin: 0px;
-
 }
+
 #col1>p{
 	text-align: center;
 	padding: 20px 0px 20px 0px;
@@ -238,7 +222,6 @@ a.inactive:hover{
 }
 
 /* Username/Password */
-
 #col2 {
 	float: left;
 	padding: 0px;
@@ -281,7 +264,7 @@ input#login:hover{
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
-	background-color: #ECF9F3;
+	background-color: #C3ECDC;
 }
 
 .row3>p, .row3>p>a{
@@ -290,12 +273,13 @@ input#login:hover{
 	line-height: .5em;
 	text-decoration: none;
 }
+
 .row3>p>a:hover{
 	color: #2C8C67;
 }
 
 #threepandas{
-	margin: 200px 33% 0px 33%;
+	margin: 30px 33% 0px 33%;
 	width: 33%;
 }
 
@@ -314,8 +298,6 @@ input#login:hover{
 }
 
 /********************* Keyframes ****************/
-
-
 @keyframes drop {
 	0% {height: 1px; width: 100%;}
 	100% {height: 800px;}
@@ -334,46 +316,21 @@ input#login:hover{
   75%  {top: 200px;}
   100% {top: 0px;}
 }
+
 @keyframes appear {
-	0% {
-		opacity: 0;
-	}
-	100%
-	{
-		opacity: 1;
-	}
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 @keyframes appear2 {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0;
-	}
-	100%
-	{
-		opacity: 1;
-	}
+	0% {opacity: 0;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 @keyframes bounceIn {
-	
-	0% {
-		transform: scale(0);
-		opacity: 0;
-	}
-	50% {
-		transform: scale(0);
-		opacity: 1;
-	}
-	
-	100% {
-		transform: scale(1);
-	}
+	0% {transform: scale(0); opacity: 0;}
+	50% {transform: scale(0); opacity: 1;}
+	100% {transform: scale(1);}
 }
-
-
-
-
 </style>

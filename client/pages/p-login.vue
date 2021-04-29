@@ -1,51 +1,33 @@
 <template>
-    <main>
-        <div id="wrapper">
-  		<!-- row1 -->
-  		<!-- <div class="row1">
-  			<h2>Welcome to</h2>
-  			<a href="p-about">About</a>
-  		</div> -->
-  		<div class="row2">
-  			<!-- <img id="logo" src="images/logo1.png" /> -->
-  			<div id="loginbox">
-  				<div id="col1">
-  					<p class="active">Login</p>
-					<p class="inactive"><a class="inactive" href="p-create">Register</a></p>
-  					<p class="inactive" id="bottom">Forgot Password?</p>
-  				</div>
-  				<div id="col2">
-					<form>  
-  					<!-- <form action="p-homek12"> -->
-  						<label>Username / Email</label>
-                		<input type="email" v-model="email" />
-                		<br>
-                		<label>Password</label>
-                		<input type="password" v-model="password" />
-						<br>
-						<button id='contButton' @click="onLogin">Continue</button>
-						  
-						<!-- <p>Username</p>
-  							<input type="text" name="username" />
-  						<p>Password</p>
-  							<input type="password" name="password" /> -->
-						<!-- <p></p>
-  							<input type="submit" name="Login" value="Login" id="login" /> -->
-  					</form>
-  				</div>
-  			</div>
-  			<!-- Currently the panda links to home but need to change this -->
-  			<a href="p-homek12">
-  			<img id="logo_panda" src="images/peppermint7.png" /></a>
-  		</div>
-  		<!-- <div class="row3">
-  			<p>Math Tutor Grades K-4 by Galaga</p>
-  			<p>Framingham State University | Software Engineering Spring 2021</p>
-  			<p><a href="">Privacy Policy</a> | <a href="">Terms and Conditions of Use </a></p>
-  		</div> -->
-  	</div>
-
-
+	<main>
+		<div id="wrapper">
+			<div class="row2">
+				<div id="loginbox">
+					<div id="col1">
+						<p class="active">Login</p>
+						<p class="inactive">
+							<a class="inactive" href="p-create">Register</a>
+						</p>
+						<p class="inactive" id="bottom">Forgot Password?</p>
+					</div>
+					<div id="col2">
+						<form>  
+							<label>Username / Email</label>
+							<input type="email" v-model="email" />
+							<br>
+							<label>Password</label>
+							<input type="password" v-model="password" />
+							<br>
+							<button id='contButton' @click="onLogin">Continue</button>
+						</form>
+					</div>
+				</div>
+				<!-- Currently the panda links to home but need to change this -->
+				<a href="p-homek12">
+					<img id="logo_panda" src="images/peppermint7.png" />
+				</a>
+			</div>
+		</div>
     </main>
 </template>
 
@@ -62,10 +44,15 @@ export default {
     methods: {
         async onLogin() {
             try {
-                this.$auth.loginWith("local", { data: {
-                    email: this.email,
-                    password: this.password
-                }});
+                this.$auth.loginWith("local", {
+					data: {
+                    	email: this.email,
+                    	password: this.password
+                	}
+				});
+				// log in only works with this alert?
+				alert("Welcome!");
+				// console.log(this.$auth);
                 this.$router.push("/p-homek12");
             } catch (err) {
                 console.log(err)
@@ -75,32 +62,13 @@ export default {
 }
 </script>
 
-<style>
-			
-
-				/* loginpage */
-
-/* Colors
-light green: #ECF9F3
-medium green: #C3ECDC;
-dark green: #2C8C67;
-
-Tips:
-padding/margin list goes top, right, bottom, left
-
-Add a border to identify an element
-	border-width: 2px 2px 2px 2px;
-	border-style: solid;
-	border-color: purple;
-*/
-
+<style scoped>
 #contButton {
 	margin: 10px;
 	height: 35px;
 	border: 3px solid red;
 	border-radius: 10px;
 }
-
 
 body{
 	background-color: #ECF9F3;
@@ -140,6 +108,7 @@ h2 {
 	animation-duration: 1s;
 	animation-name: appear;
 }
+
 .row1>a{
 	float: right;
 
@@ -147,12 +116,10 @@ h2 {
 
 }
 
-
 .row1>a:hover{
 	font-size: 110%;
 	margin: 29px 2.8% 0px 0%;
 }
-
 
 
 /* Second row which includes Peppermint logo,
@@ -220,8 +187,8 @@ font-size: 120%;
 		width: 68%;
 	}
 	.row3>p {font-size: 80%;}
-
 }
+
 /* Style for medium iPad-size screen */
 @media (max-width: 1000px) {
 	.row1>h2 {font-size: 200%;}
@@ -275,8 +242,8 @@ font-size: 120%;
 	border-style: solid;
 	border-color: #2C8C67;
 	margin: 0px;
-
 }
+
 #col1>p{
 	text-align: center;
 	padding: 20px 0px 20px 0px;
@@ -306,7 +273,6 @@ a.inactive:hover{
 }
 
 /* Username/Password */
-
 #col2 {
 	float: left;
 	padding: 0px;
@@ -358,6 +324,7 @@ input#login:hover{
 	line-height: .5em;
 	text-decoration: none;
 }
+
 .row3>p>a:hover{
 	color: #2C8C67;
 }
@@ -382,17 +349,14 @@ input#login:hover{
 }
 
 /********************* Keyframes ****************/
-
-
 @keyframes drop {
 	0% {height: 1px; width: 100%;}
 	100% {height: 800px;}
 }
 
 @keyframes rotate_decline {
-    0%   {-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg);  transform: rotate(0deg); margin-top: -100px;}
-    100%  {-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg); margin-top: 0px;}
-
+    0% {-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg);  transform: rotate(0deg); margin-top: -100px;}
+    100% {-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg); margin-top: 0px;}
 }
 
 @keyframes mymove {
@@ -402,46 +366,21 @@ input#login:hover{
   75%  {top: 200px;}
   100% {top: 0px;}
 }
+
 @keyframes appear {
-	0% {
-		opacity: 0;
-	}
-	100%
-	{
-		opacity: 1;
-	}
+	0% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 @keyframes appear2 {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0;
-	}
-	100%
-	{
-		opacity: 1;
-	}
+	0% {opacity: 0;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
 }
 
 @keyframes bounceIn {
-	
-	0% {
-		transform: scale(0);
-		opacity: 0;
-	}
-	50% {
-		transform: scale(0);
-		opacity: 1;
-	}
-	
-	100% {
-		transform: scale(1);
-	}
+	0% {transform: scale(0); opacity: 0;}
+	50% {transform: scale(0); opacity: 1;}
+	100% {transform: scale(1);}
 }
-
-
-
-
 </style>

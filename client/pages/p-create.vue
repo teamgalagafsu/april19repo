@@ -1,7 +1,6 @@
 <template>
     <main>
         <span id='title'>Sign up for a FREE Peppermint account</span>
-        
         <form id='container'>
             <label>First name</label>
             <input type="text" v-model="firstName">
@@ -13,16 +12,12 @@
             <input type="password" v-model="password1">
             <label>Confirm password</label>
             <input type="password" v-model="password2">
-
             <label>Grade</label>
             <input type="text" v-model="grade">
             <label>Teacher Name</label>
             <input type="text" v-model="teacherName">
-
-
             <span id='signupBtn' @click="onSignup">Create your account</span>
         </form>
-        
     </main>
 </template>
 
@@ -49,7 +44,6 @@ export default {
                     return
                 }
                 
-                
                 let data = {
                     firstName: this.firstName,
                     lastName: this.lastName,
@@ -57,7 +51,6 @@ export default {
                     password: this.password2,
                     grade: this.grade,
                     teacherName: this.teacherName,
-
                 };
 
                 let response = await this.$axios.$post("/api/auth/signup", data);
@@ -106,20 +99,18 @@ label {
 #youNotDog {
     padding-bottom: 10px;
 }
+
 input {
     width: 90%;
     margin-left: 5%;
     margin-bottom: 20px;
 }
 
-
-
 #signupBtn {
     padding-top: 20px;
     cursor: pointer;
     margin-left: 5%;
     font-size: 2em;
-    
     width: fit-content;
     /* height: 35px; */
     background: red;
@@ -132,6 +123,5 @@ input {
     border: 2px solid black;
     margin: 10px auto;
     /* margin-bottom: 2px; */
-
 }
 </style>
