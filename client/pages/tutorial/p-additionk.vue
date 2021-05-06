@@ -14,10 +14,7 @@
 						<tr>
 							<td style="border: none;" align="center">
 								<h3 style="font-size: 26px;">How to Tell Time</h3>
-								<!-- Need to update with Youtube link -->
-								<video width="800" height="500" controls>
-									<source src="/videos/PeppermintPepTutorial1.m4v" type="video/mp4"/>
-								</video>
+								<iframe width="800" height="500" src="https://www.youtube.com/embed/zALK1uQ5d2U"></iframe>
 							</td>
 						</tr>
 					</tbody>

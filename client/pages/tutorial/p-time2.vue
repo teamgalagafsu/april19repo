@@ -1,57 +1,36 @@
 <template>
     <main>
-        <div id="homewrapper">
-  			<div id="homerow1">
+		<div id="homewrapper">
+			<div id="homerow1">
 				<h2 id="usernamehere">Username</h2>
 				<img id="candybowl" src="/images/tencandy.png" />
-				<a href="../profile">
+				<a href="profile">
 					<img id="accounticon" src="/images/accounticon.png" />
 				</a>
-  			</div>
-  			<div id="homerow2">
-				<table width="100%">
+			</div>
+			<div id="homerow2">
+				<table align="center" width="100%">
 					<tbody>
 						<tr>
-							<td id="tutorial1" align="center" width="25%" style="border: none;">
-								<a href="../p-comingsoon">
-									<img id="algebthinking" height="200px" width="200px" src="/images/leaf2.png" />
-									<h3>Coming Soon</h3>
-								</a>
-							</td>
-							<td align="center" width="25%" style="border: none;">
-								<a href="../p-comingsoon">
-									<img id="numoperbaseten" height="200px" width="200px" align="center" src="/images/leaf1.png" />
-									<h3>Coming Soon</h3>
-								</a>
-							</td>
-							<td align="center" width="25%" style="border: none;">
-								<a href="../p-comingsoon">
-									<img id="measuredata" height="200px" width="200px" src="/images/leaf2.png" />
-									<h3>Coming Soon</h3>
-								</a>
-							</td>
-							<td align="center" width="25%" style="border: none;">
-								<a href="../p-comingsoon">
-									<img id="geometry" height="200px" width="200px" src="/images/leaf1.png" />
-									<h3>Coming Soon</h3>
-								</a>
+							<td style="border: none;" align="center">
+								<h3 style="font-size: 26px;">How to Tell Time</h3>
+								<iframe width="800" height="500" src="https://www.youtube.com/embed/ezrdR-NlmjQ"></iframe>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
-    </main>
+	</main>
 </template>
 
 <script>
 export default {
-	mounted () {
+	mounted() {
 		/********************* Updating Username at top of Page ************/
+
 		// store the DOM node with id="username" in a variable
-		var updateUsername = document.getElementById('usernamehere');
-		var tutorial = document.getElementById('tutorial1');
-		var grade;
+		var updateUsername = document.getElementById('usernamehere'); 
 
 		// update the inner HTML of this node to the name from the student object
 		if (!this.$auth.$state.loggedIn) {
@@ -59,13 +38,6 @@ export default {
 			return
 		} else {
 			updateUsername.innerHTML = this.$auth.user.email;
-			grade = this.$auth.user.grade;
-		}
-
-		if(grade == 2) {
-			tutorial.innerHTML = "<a href='p-time2'><img id='algebthinking' height='200px' width='400px' src='/images/timepanda.png' /><h3>How to Tell Time</h3></a>"
-		} else if(grade == 'K' || grade == 'k') {
-			tutorial.innerHTML = "<a href='p-additionk'><img id='algebthinking' height='200px' width='400px' src='/images/timepanda.png' /><h3>Let's Talk About Addition</h3></a>"
 		}
 	}
 }
@@ -205,7 +177,6 @@ h4{
 #row3col1{
 	float: left;
 	padding: 0px;
-
 }
 
 #row3col2{

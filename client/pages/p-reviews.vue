@@ -2,25 +2,20 @@
     <main>
 		<div>
 			<h2>
-				<h1 align="left">About:</h1>
-				<br>Welcome to Peppermint!
+				<h1 align="left">Reviews:</h1>
+				<br>
+				The Peppermint Project remains under private evaluation and has not yet received any public or commercial reviews. 
+				All software notes, critiques, and reviews are recognized only by Galaga team members, Professor Morabito of Framingham State University, 
+				and occasional criticism from supplementary teams of the CSCI 362 Software Engineering course 
+				(of which Galaga Team originated). 
 				<br><br>
-				Peppermint is a math tutor software for elementary-aged children and their administrators that helps students study math and practice their math skills.
-				This software serves children in grades K through grade 4 in the area of “Number Sense and Operations” in accordance with the <a target="_blank" href="https://www.doe.mass.edu/frameworks/math/2017-06.pdf">Massachusetts Department of Elementary and Secondary Education</a>.
-				Peppermint was designed and built by a group of software engineers with your children and their futures in mind, come learn with us!
+				The Peppermint project has been described by Professor Morabito as a “brilliant example of exactly what I wanted this course to be about.”
 				<br><br>
-				The Peppermint Math Tutor Project is an ongoing web application software in development by Team Galaga of Framingham State University. 
-          		Galaga is made up of members Agner Gomes Junior, Beatriz Ricardo, Kay “Kristin” Rubio, Sandy Lord, and Taylor Jackman.
-          		Orchestrated by Professor Morabito for the Spring 2021 CSCI 362 Software Engineering course, Galaga instantaneously flourished when five great minds were randomly assigned together in expectation to deliver something great. 
-          		The fortunate notable rapport between course mates allowed for great success to be apparent within a short, limited time for Galaga.
-				The overall goal for this course, one could determine to be: “how to be a professional and work in a team-based environment within the field of software engineering.”  
-          		With each person’s individual strengths highlighted in these pages, brilliantly coming together; it is a humble student team’s optimism to have successfully reached and executed this goal.
-				We hope users enjoy the Peppermint Project as much as Galaga enjoyed the process of creating it. 
-          		A special thank you to Professor Morabito and Framingham State University for this wonderful, and rare learning opportunity. 
-          		<br><br>
-          		Very truly yours,
-          		<br>
-          		Team Galaga. 
+				Thank you for your interest in the current beta test of the Peppermint Project.
+				<br><br>
+				Very truly yours,
+				<br>
+				Team Galaga.
 			</h2>
 			<img id="threepandas" src="images/threepandas.png" />
 		</div>

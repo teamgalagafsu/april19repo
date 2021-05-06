@@ -4,7 +4,7 @@
       <div id="homerow1">
           <h2 id="usernamehere">Username</h2>
           <img id="candybowl" src="/images/tencandy.png" />
-          <a href="profile">
+          <a href="../profile">
             <img id="accounticon" src="/images/accounticon.png" />
           </a>
       </div>

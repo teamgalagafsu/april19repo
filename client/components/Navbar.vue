@@ -30,13 +30,13 @@
                 </div>
                 <div id="bottomContainer">
                     <div id='features' class='linker'>
-                        <nuxt-link to='/p-comingsoon' style="white-space: pre;">Features</nuxt-link>
+                        <nuxt-link to='/p-features' style="white-space: pre;">Features</nuxt-link>
                     </div>
                     <div id='pricing' class='linker'>
-                        <nuxt-link to='/p-comingsoon'>Pricing</nuxt-link>
+                        <nuxt-link to='/p-pricing'>Pricing</nuxt-link>
                     </div>
                     <div id='reviews' class='linker'>
-                        <nuxt-link to='/p-comingsoon'>Reviews</nuxt-link>
+                        <nuxt-link to='/p-reviews'>Reviews</nuxt-link>
                     </div> 
                     <div id='about' class='linker'>
                         <nuxt-link to='/p-about'>About</nuxt-link>
