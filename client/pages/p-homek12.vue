@@ -32,12 +32,12 @@
 				</div>
 				<div id="row3">
 					<div id="row3col1">
-						<img class="progress" src="images/progressbar.png" />
-						<p>Numbers: 60%</p>
+						<img class="progress" id="numCorrectOA" src="images/progress0.png" />
+						<p id="numCorrectOAText">Math Thinking: 0%</p>
 					</div>
 					<div id="row3col2">
-						<img class="progress" src="images/progressbar.png" />
-						<p>Algebra: 60%</p>
+						<img class="progress" id="numCorrectNBT" src="images/progress0.png" />
+						<p id="numCorrectNBTText">Numbers in Base Ten: 0%</p>
 					</div>
 				</div>
 			</div>
@@ -49,6 +49,14 @@
 export default {
     mounted() {
 		var grade;
+
+		//Replace this code with retrieving numCorrectOA from the database
+		var numCorrectOA = 4;
+		var numCorrectNBT = 7;
+
+		//Replace this code with retrieving how many rewards they have earned from the database
+		var reward = 20;
+
 		/********************* Updating Username at top of Page ************/
 		// store the DOM node with id="username" in a variable
 		var updateUsername = document.getElementById('usernamehere'); 
@@ -69,9 +77,6 @@ export default {
 		}
 
 		/********************* Updating Rewards Icon ************/
-		//Get the student's current rewards and store in a variable
-		var reward = 3;
-
 		// Depending on the number of rewards stored in the student object
 		// display the right picture by changing the image source
 		switch(reward) {
@@ -108,8 +113,134 @@ export default {
 			case 10:
 				document.getElementById("candybowl").src='images/tencandy.png';
 				break;
+			case 11:
+				document.getElementById("candybowl").src='images/elevencandy.png';
+				break;
+			case 12:
+				document.getElementById("candybowl").src='images/twelvecandy.png';
+				break;
+			case 13:
+				document.getElementById("candybowl").src='images/thirteencandy.png';
+				break;
+			case 14:
+				document.getElementById("candybowl").src='images/fourteencandy.png';
+				break;
+			case 15:
+				document.getElementById("candybowl").src='images/fifteencandy.png';
+				break;
+			case 16:
+				document.getElementById("candybowl").src='images/sixteencandy.png';
+				break;
+			case 17:
+				document.getElementById("candybowl").src='images/seventeencandy.png';
+				break;
+			case 18:
+				document.getElementById("candybowl").src='images/eightteencandy.png';
+				break;
+			case 19:
+				document.getElementById("candybowl").src='images/nineteencandy.png';
+				break;
+			case 20:
+				document.getElementById("candybowl").src='images/twentycandy.png';
+				break;
 			default:
-				document.getElementById("candybowl").src='images/zerocandy.png';
+				document.getElementById("candybowl").src='images/twentycandy.png';
+				break;
+		}
+
+		/********************* Updating Progress Bars ************/
+
+		switch(numCorrectOA) {
+			case 0:
+				document.getElementById("numCorrectOA").src='images/progress0.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 0%";
+				break;
+			case 1:
+				document.getElementById("numCorrectOA").src='images/progress10.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 10%";
+				break;
+			case 2:
+				document.getElementById("numCorrectOA").src='images/progress20.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 20%";
+				break;
+			case 3:
+				document.getElementById("numCorrectOA").src='images/progress30.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 30%";
+				break;
+			case 4:
+				document.getElementById("numCorrectOA").src='images/progress40.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 40%";
+				break;
+			case 5:
+				document.getElementById("numCorrectOA").src='images/progress50.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 50%";
+				break;
+			case 6:
+				document.getElementById("numCorrectOA").src='images/progress60.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 60%";
+				break;
+			case 7:
+				document.getElementById("numCorrectOA").src='images/progress70.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 70%";
+				break;
+			case 8:
+				document.getElementById("numCorrectOA").src='images/progress80.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 80%";
+				break;
+			case 9:
+				document.getElementById("numCorrectOA").src='images/progress90.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 90%";
+				break;
+			case 10:
+				document.getElementById("numCorrectOA").src='images/progress100.png';
+				document.getElementById('numCorrectOAText').innerHTML = "Math Thinking: 100%";
+				break;
+		}
+
+		switch(numCorrectNBT) {
+			case 0:
+				document.getElementById("numCorrectNBT").src='images/progress0.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 0%";
+				break;
+			case 1:
+				document.getElementById("numCorrectNBT").src='images/progress10.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 10%";
+				break;
+			case 2:
+				document.getElementById("numCorrectNBT").src='images/progress20.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 20%";
+				break;
+			case 3:
+				document.getElementById("numCorrectNBT").src='images/progress30.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 30%";
+				break;
+			case 4:
+				document.getElementById("numCorrectNBT").src='images/progress40.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 40%";
+				break;
+			case 5:
+				document.getElementById("numCorrectNBT").src='images/progress50.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 50%";
+				break;	
+			case 6:
+				document.getElementById("numCorrectNBT").src='images/progress60.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 60%";
+				break;
+			case 7:
+				document.getElementById("numCorrectNBT").src='images/progress70.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 70%";
+				break;
+			case 8:
+				document.getElementById("numCorrectNBT").src='images/progress80.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 80%";
+				break;
+			case 9:
+				document.getElementById("numCorrectNBT").src='images/progress90.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 90%";
+				break;
+			case 10:
+				document.getElementById("numCorrectNBT").src='images/progress100.png';
+				document.getElementById('numCorrectNBTText').innerHTML = "Numbers in Base Ten: 100%";
 				break;
 		}
     }

@@ -1,16 +1,25 @@
 <template>
     <main>
         <h1>Profile</h1>
-        <div>
-            Name: {{ $auth.$state.user.firstName + " " + $auth.$state.user.lastName }}
-        </div>
-        <div>
-            Email / Login: {{ $auth.$state.user.email }}
-        </div>
-        <div>
-            Teacher and Grade: {{ $auth.$state.user.teacherName + " " + $auth.$state.user.grade }}
-        </div>
-        <div v-if="$auth.$state.user.userType == 'client'">
+        <form id='container'>
+            <label id='text'>First Name:</label>
+            <input id="firstName" type="text" v-model="firstName" :placeholder="$auth.$state.user.firstName" readonly>
+            <br><br>
+            <label id='text'>Last Name:</label>
+            <input type="text" v-model="lastName" :placeholder="$auth.$state.user.lastName" readonly>
+            <br><br>
+            <label id='text'>Email/Login:</label>
+            <input type="text" v-model="email" :placeholder="$auth.$state.user.email" readonly>
+            <br><br>
+            <label id='text'>Grade:</label>
+            <input type="text" v-model="grade" :placeholder="$auth.$state.user.grade">
+            <br><br>
+            <label id='text'>Teacher Name:</label>
+            <input type="text" v-model="teacherName" :placeholder="$auth.$state.user.teacherName">
+            <br><br>
+            <span id='signupBtn' @click="onSave">Save</span>
+        </form>
+        <!-- <div v-if="$auth.$state.user.userType == 'client'">
             <div id="clientInfo">               
                 <span class='client-class' id='clientName'>Client Name: {{ $auth.$state.user.firstName + " " + $auth.$state.user.lastName }}</span>
                 <span class='client-class' id='clientEmail'>Client Email / Login: {{ $auth.$state.user.email }}</span>
@@ -31,14 +40,43 @@
                 <br>
             </div>
             <br>
-        </div>
+        </div> -->
     </main>
 </template>
 
 <script>
 export default {
     middleware: "auth",
+    // auth: "client",
+    data() {
+        return {
+            firstName: "",
+            lastName: "",
+            email: "",
+            grade: "",
+            teacherName: "",
+        }
+    },
     methods: {
+        async onSave() {
+            try {
+                let data = {
+                    firstName: this.firstName,
+                    lastName: this.lastName,
+                    email: this.email,
+                    grade: this.grade,
+                    teacherName: this.teacherName,
+                };
+
+                let response = await this.$axios.$post("/api/auth/user", data);
+
+                if (response.success) {
+                    this.$router.push("/profile");
+                }
+            } catch (err) {
+                console.log(err)
+            }
+        },
         getAmericanEnglishDate() {
             let date = this.getNow();
 
@@ -89,6 +127,44 @@ export default {
 <style scoped>
 body {
     background-color: transparent;
+}
+
+h1 {
+    font-size: 200%;
+    width: 30%;
+    margin: 5px 0% 0px 5%;
+    color: #2C8C67;
+}
+
+#text {
+	color: #2C8C67;
+	width: 100%;
+	border-radius: 5px;
+	padding: 5px 5% 5px 5%;
+	text-align: left;
+}
+
+#container {
+    padding-top: 20px;
+    display: block;
+    /* flex-direction: column; */
+}
+
+#signupBtn {
+    padding-top: 20px;
+    cursor: pointer;
+    margin-left: 5%;
+    font-size: 1em;
+    width: fit-content;
+    /* height: 35px; */
+    background: red;
+    color: white;
+    border-radius: 10px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    border: 2px solid black;
 }
 
 #today {

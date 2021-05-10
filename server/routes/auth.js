@@ -67,16 +67,21 @@ router.post("/auth/login", async (req, res) => {
     }
 });
 
-router.put("/auth/user", verifyToken, async (req, res) => { 
+router.post("/auth/user", verifyToken, async (req, res) => { 
     try {
-        let foundUser = await PepStudentUser.findOne({ _id: req.decoded._id});
-        if (foundUser) {
-            if (req.body.name) {foundUser.name = req.body.name; }
+        let foundUser = await PepStudentUser.findOne({email: req.body.email});
+        if (!foundUser) {
+            res.status(403).json({success:false, message: "Authentication failed, User not found"});
+        } else {
+            if (req.body.firstName) {foundUser.firstName = req.body.firstName; }
+            if (req.body.lastName) {foundUser.lastName = req.body.lastName; }
             if (req.body.email) {foundUser.email = req.body.email; }
             if (req.body.password) {foundUser.password = req.body.password; }
+            if (req.body.grade) {foundUser.grade = req.body.grade; }
+            if (req.body.teacherName) {foundUser.teacherName = req.body.teacherName; }
         }
     } catch (err) {
-        console.log(err);
+        res.status(500).json({success: false, message: err.message})
     }
 });
 

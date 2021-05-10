@@ -73,7 +73,7 @@ export default {
     var firstTry = new Map();
     var i = 1;
     var numAnswered = 0; // keeps track of how many they've answered
-    var numCorrect = 0; // will be used to keep track of the number correct
+    var numCorrectNBT = 0; // will be used to keep track of the number correct
 
     // answer options will be a two-dimensional array
     let answerOptions = [
@@ -246,6 +246,102 @@ export default {
         ['>','<','='],
         ['A','B','C']
       ];
+    } else if(grade=='3') {
+      /* Set up the Map() objects for the questions, answers, and image for the answer options */
+      questionSet.set(1, "What time is it?");
+      questionSet.set(2, "What time is it?");
+      questionSet.set(3, "Round 87 to the nearest ten");
+      questionSet.set(4, "Round 32 to the nearest ten");
+      questionSet.set(5, "354 – 245 = ?");
+      questionSet.set(6, "673 + 231 = ?");
+      questionSet.set(7, "Are these two fractions the same amount? 2/4 and 1/2");
+      questionSet.set(8, "Are these two fractions the same amount? 3/4 and 6/8");
+      questionSet.set(9, "Multiply: 4 groups of 3 candies");
+      questionSet.set(10, "Multiply: 5 groups of 2 carrots");
+
+      answerSet.set(1, "2");
+      answerSet.set(2, "3");
+      answerSet.set(3, "3");
+      answerSet.set(4, "1");
+      answerSet.set(5, "3");
+      answerSet.set(6, "2");
+      answerSet.set(7, "1");
+      answerSet.set(8, "1");
+      answerSet.set(9, "3");
+      answerSet.set(10, "2");
+
+      imageSet0.set(1, "../images/hw/3nbt_rec_1.png");
+      imageSet0.set(2, "../images/hw/3nbt_rec_2.png");  
+      imageSet0.set(3, "../images/hw/2nbt_rec_blank.png");
+      imageSet0.set(4, "../images/hw/2nbt_rec_blank.png");
+      imageSet0.set(5, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(6, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(7, "../images/hw/1oa_rec_TF.png");
+      imageSet0.set(8, "../images/hw/1oa_rec_TF.png");
+      imageSet0.set(9, "../images/hw/3nbt_rec_9.png");
+      imageSet0.set(10, "../images/hw/3nbt_rec_10.png");
+
+      // answer options will be a two-dimensional array
+      answerOptions = [
+        ['12:30','3:00','4:30'],
+        ['7:11','11:00','11:07'],
+        ['80','85','90'],
+        ['30','32','40'],
+        ['95','108','109'],
+        ['803','904','956'],
+        ['True','Unknown','False'],
+        ['True','Unknown','False'],
+        ['6','8','12'],
+        ['5','10','15']
+      ];
+    } else if(grade=='4') {
+      /* Set up the Map() objects for the questions, answers, and image for the answer options */
+      questionSet.set(1, "John has 400 goldfish. Janet has 70 goldfish. Mark has 3 goldfish.  How many do they have together?");
+      questionSet.set(2, "Judy has 700 rocks in her rock collection. If Arty gives her 80 more, and Mark gives her another 6. How many rocks will she have?");
+      questionSet.set(3, "Add:");
+      questionSet.set(4, "Add:");
+      questionSet.set(5, "Subtract:");
+      questionSet.set(6, "Subtract:");
+      questionSet.set(7, "Multiply 234 x 6 = ");
+      questionSet.set(8, "Multiply 576 x 3 = ");
+      questionSet.set(9, "3/ 8 = ");
+      questionSet.set(10, "If 5 people come to your birthday party and they each eat ½ a pizza, how many whole pizza’s do you need?");
+
+      answerSet.set(1, "2");
+      answerSet.set(2, "1");
+      answerSet.set(3, "3");
+      answerSet.set(4, "1");
+      answerSet.set(5, "2");
+      answerSet.set(6, "3");
+      answerSet.set(7, "1");
+      answerSet.set(8, "2");
+      answerSet.set(9, "1");
+      answerSet.set(10, "3");
+
+      imageSet0.set(1, "../images/hw/4nbt_rec_1.png");
+      imageSet0.set(2, "../images/hw/4nbt_rec_2.png");  
+      imageSet0.set(3, "../images/hw/4nbt_rec_3.png");
+      imageSet0.set(4, "../images/hw/4nbt_rec_4.png");
+      imageSet0.set(5, "../images/hw/4nbt_rec_5.png");
+      imageSet0.set(6, "../images/hw/4nbt_rec_6.png");
+      imageSet0.set(7, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(8, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(9, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(10, "../images/hw/4nbt_rec_10.png");
+
+      // answer options will be a two-dimensional array
+      answerOptions = [
+        ['385', '473', '573'],
+        ['786', '821', '932'],
+        ['112321', '231344', '3077079'],
+        ['87031', '9486', '18883'],
+        ['1534', '1337', '8483'],
+        ['3456', '4884', '5504'],
+        ['1404', '8737', '91867'],
+        ['980', '1728', '2495'],
+        ['1/8 + 1/8 + 1/8', '3/8 + 2/8 + 1/8', '2/8 + 2/8'],
+        ['1','2','3']
+      ];
     }
 
     /* Display the right question on the page*/
@@ -272,7 +368,7 @@ export default {
         if(option == answerSet.get(i)) {
           var panda = document.getElementById('responding_panda');
           panda.setAttribute('src', "../images/great_job_panda.png");
-          numCorrect++;
+          numCorrectNBT++;
 
           // call the function to display the right number of rewards
           displayReward();
@@ -379,7 +475,7 @@ export default {
     // Depending on the number of rewards stored in the student object
     // display the right picture by changing the image source
     function displayReward() {
-      switch(numCorrect) {
+      switch(numCorrectNBT) {
       case 0:
         document.getElementById("candybowl").src='../images/zerocandy.png';
         break;
@@ -413,8 +509,38 @@ export default {
       case 10:
         document.getElementById("candybowl").src='../images/tencandy.png';
         break;
+      case 11:
+        document.getElementById("candybowl").src='images/elevencandy.png';
+        break;
+      case 12:
+        document.getElementById("candybowl").src='images/twelvecandy.png';
+        break;
+      case 13:
+        document.getElementById("candybowl").src='images/thirteencandy.png';
+        break;
+      case 14:
+        document.getElementById("candybowl").src='images/fourteencandy.png';
+        break;
+      case 15:
+        document.getElementById("candybowl").src='images/fifteencandy.png';
+        break;
+      case 16:
+        document.getElementById("candybowl").src='images/sixteencandy.png';
+        break;
+      case 17:
+        document.getElementById("candybowl").src='images/seventeencandy.png';
+        break;
+      case 18:
+        document.getElementById("candybowl").src='images/eightteencandy.png';
+        break;
+      case 19:
+        document.getElementById("candybowl").src='images/nineteencandy.png';
+        break;
+      case 20:
+        document.getElementById("candybowl").src='images/twentycandy.png';
+        break;
       default:
-        document.getElementById("candybowl").src='../images/zerocandy.png';
+        document.getElementById("candybowl").src='images/twentycandy.png';
         break;
       }
     } 

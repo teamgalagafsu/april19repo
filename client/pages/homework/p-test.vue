@@ -167,7 +167,7 @@ export default {
       imageSet0.set(7, "../images/hw/knbt_rec_6.png");
       imageSet0.set(8, "../images/hw/knbt_rec_8.png");
       imageSet0.set(9, "../images/hw/knbt_rec_1.png");
-      imageSet0.set(10, "../images/hw/knbt_rec_2.png");
+      imageSet0.set(10, "../images/hw/knbt_rec_2.png"); 
 
       // answer options will be a two-dimensional array
       answerOptions = [
@@ -278,6 +278,102 @@ export default {
         ['A','B','C'],
         ['36','37','46'],
       ];
+    } else if(grade=='3') {
+      /* Set up the Map() objects for the questions, answers, and image for the answer options */
+      questionSet.set(1, "What time is it?");
+      questionSet.set(2, "Round 32 to the nearest ten");
+      questionSet.set(3, "What time is it?");
+      questionSet.set(4, "Multiply: 4 groups of 3 candies");
+      questionSet.set(5, "Multiply: 5 groups of 2 carrots");
+      questionSet.set(6, "Ayesha wants to make the same number of pastries for her mom, her dad, her grandma, and her grandpa.  She has enough ingredients to make 16 pastries.  How many can she make for each family member?");
+      questionSet.set(7, "Omolara says that 82 x 37 is the same as 37 x 82.  Is that true or false? Does the order matter in multiplication?");
+      questionSet.set(8, "8 x ? = 48");
+      questionSet.set(9, "38 x 1 = ?");
+      questionSet.set(10, "Sachin has 3 best friends.  He wants to give each of his best friends 5 cookies.  How many cookies will he need to bake?");
+
+      answerSet.set(1, "2");
+      answerSet.set(2, "1");
+      answerSet.set(3, "3");
+      answerSet.set(4, "3");
+      answerSet.set(5, "2");
+      answerSet.set(6, "2");
+      answerSet.set(7, "1");
+      answerSet.set(8, "2");
+      answerSet.set(9, "1");
+      answerSet.set(10, "2");
+
+      imageSet0.set(1, "../images/hw/3nbt_rec_1.png");
+      imageSet0.set(2, "../images/hw/2nbt_rec_blank.png");
+      imageSet0.set(3, "../images/hw/3nbt_rec_2.png"); 
+      imageSet0.set(4, "../images/hw/3nbt_rec_9.png");
+      imageSet0.set(5, "../images/hw/3nbt_rec_10.png");
+      imageSet0.set(6, "../images/hw/3oa_rec_10.png");
+      imageSet0.set(7, "../images/hw/1oa_rec_TF.png");
+      imageSet0.set(8, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(9, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(10, "../images/hw/3oa_rec_1.png");
+
+      // answer options will be a two-dimensional array
+      answerOptions = [
+        ['12:30','3:00','4:30'],
+        ['30','32','40'],
+        ['7:11','11:00','11:07'],
+        ['6','8','12'],
+        ['5','10','15'],
+        ['3','4','5'],
+        ['True','Unknown','False'],
+        ['5','6','7'],
+        ['38','76','114'],
+        ['5','15','20'],
+      ];
+    } else if(grade=='4') {
+      /* Set up the Map() objects for the questions, answers, and image for the answer options */
+      questionSet.set(1, "8 x ? = 24");
+      questionSet.set(2, "3 a multiple of 8. True or False?");
+      questionSet.set(3, "4 a multiple of 16. True or False?");
+      questionSet.set(4, "Complete the pattern:");
+      questionSet.set(5, "Choose the right math sentence for this story.  Emmanuel starts the school year with an empty locker. In September, he puts 5 books in his locker.  In October he adds another 5 books.  In November he adds another 5 books.  In December, he adds another 5 books.  If he doesn’t remove any books, how many books will he have in his locker by winter break?");
+      questionSet.set(6, "If 5 people come to your birthday party and they each eat ½ a pizza, how many whole pizza’s do you need?");
+      questionSet.set(7, "Multiply 576 x 3 = ");
+      questionSet.set(8, "Subtract:");
+      questionSet.set(9, "Add:");
+      questionSet.set(10, "Judy has 700 rocks in her rock collection. If Arty gives her 80 more, and Mark gives her another 6. How many rocks will she have?");
+
+      answerSet.set(1, "1");
+      answerSet.set(2, "3");
+      answerSet.set(3, "1");
+      answerSet.set(4, "3");
+      answerSet.set(5, "1");
+      answerSet.set(6, "3");
+      answerSet.set(7, "2");
+      answerSet.set(8, "3");
+      answerSet.set(9, "1");
+      answerSet.set(10, "1");
+
+      imageSet0.set(1, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(2, "../images/hw/1oa_rec_TF.png");
+      imageSet0.set(3, "../images/hw/1oa_rec_TF.png");
+      imageSet0.set(4, "../images/hw/4oa_rec_6.png");
+      imageSet0.set(5, "../images/hw/4oa_rec_2.png"); 
+      imageSet0.set(6, "../images/hw/4nbt_rec_10.png");
+      imageSet0.set(7, "../images/hw/3oa_rec_3.png");
+      imageSet0.set(8, "../images/hw/4nbt_rec_6.png");
+      imageSet0.set(9, "../images/hw/4nbt_rec_4.png");
+      imageSet0.set(10, "../images/hw/4nbt_rec_2.png");  
+
+      // answer options will be a two-dimensional array
+      answerOptions = [
+        ['3','4','5'],
+        ['True','Unknown','False'],
+        ['True','Unknown','False'],
+        ['8, 9, 10...','9, 11, 13...','10, 13, 16...'],
+        ['4 x 5 = 20','4 + 5 = 9','4 x 3 = 12'],
+        ['1','2','3'],
+        ['980', '1728', '2495'],
+        ['3456', '4884', '5504'],
+        ['87031', '9486', '18883'],
+        ['786', '821', '932'],
+      ];
     }
 
     /* Display the right question on the page*/
@@ -295,6 +391,9 @@ export default {
 
     // call the function to display the right number of rewards
     displayReward();
+
+    // store the DOM element for the "% Complete" in an object so it can be updated
+    var percentComplete = document.getElementById('percentComplete');
 
     /* Function to record completion of the question and update the progress bar/answer list */
     function updateAnswer(option) {
@@ -481,8 +580,38 @@ export default {
         case 10:
           document.getElementById("candybowl").src='../images/tencandy.png';
           break;
+        case 11:
+          document.getElementById("candybowl").src='../images/elevencandy.png';
+          break;
+        case 12:
+          document.getElementById("candybowl").src='../images/twelvecandy.png';
+          break;
+        case 13:
+          document.getElementById("candybowl").src='../images/thirteencandy.png';
+          break;
+        case 14:
+          document.getElementById("candybowl").src='../images/fourteencandy.png';
+          break;
+        case 15:
+          document.getElementById("candybowl").src='../images/fifteencandy.png';
+          break;
+        case 16:
+          document.getElementById("candybowl").src='../images/sixteencandy.png';
+          break;
+        case 17:
+          document.getElementById("candybowl").src='../images/seventeencandy.png';
+          break;
+        case 18:
+          document.getElementById("candybowl").src='../images/eightteencandy.png';
+          break;
+        case 19:
+          document.getElementById("candybowl").src='../images/nineteencandy.png';
+          break;
+        case 20:
+          document.getElementById("candybowl").src='../images/twentycandy.png';
+          break;
         default:
-          document.getElementById("candybowl").src='../images/zerocandy.png';
+          document.getElementById("candybowl").src='../images/twentycandy.png';
           break;
       }
     } 
