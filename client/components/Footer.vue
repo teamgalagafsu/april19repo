@@ -7,7 +7,7 @@
                 <p>
                     <a href="p-privacy">Privacy Policy</a>
                     <a>|</a>
-                    <a href="p-comingsoon">Terms and Conditions of Use</a>
+                    <a href="p-terms">Terms and Conditions of Use</a>
                 </p>
                 <template v-if="$auth.$state.loggedIn">
                     <span @click="onLogout" id='logout'>Logout</span>
